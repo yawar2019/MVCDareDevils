@@ -11,13 +11,21 @@ namespace MVCDareDevils
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("new/MYSimpleDay1");
+
+            routes.MapMvcAttributeRoutes();
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                name: "Default1",
+                url: "PistaHouse/Bakery",
+                defaults: new { controller = "New", action = "helloWorld", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+              name: "Default",
+              url: "{controller}/{action}/{empid}",
+              defaults: new { controller = "Home", action = "Index", empid = UrlParameter.Optional }
+          );
         }
     }
 }
