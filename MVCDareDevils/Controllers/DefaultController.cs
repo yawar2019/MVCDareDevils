@@ -8,7 +8,7 @@ namespace MVCDareDevils.Controllers
 {
     public class DefaultController : Controller
     {
-        // GET: Default Great News
+        // GET: Default
         public ActionResult Index()
         {
             return View();
