@@ -86,8 +86,6 @@ namespace MVCDareDevils.Controllers
         public ActionResult MyfavoriteDay4()
         {
             List<EmployeeModel> listemployee = new List<EmployeeModel>();
-             
-
 
             EmployeeModel obj = new EmployeeModel();
             obj.EmpId = 1;
@@ -108,11 +106,8 @@ namespace MVCDareDevils.Controllers
             listemployee.Add(obj1);
             listemployee.Add(obj2);
 
-
-
             ViewBag.info = listemployee;
            
-
             return View();
         }
 
@@ -122,10 +117,44 @@ namespace MVCDareDevils.Controllers
             obj.EmpId = 1;
             obj.EmpName = "Lakshmi";
             obj.EmpSalary = 2310000;
-
-           
-
             return View(obj);
+        }
+        public ViewResult MyfavoriteDay6()
+        {
+            List<EmployeeModel> listemployee = new List<EmployeeModel>();
+
+            EmployeeModel obj = new EmployeeModel();
+            obj.EmpId = 1;
+            obj.EmpName = "Lakshmi";
+            obj.EmpSalary = 2310000;
+
+            EmployeeModel obj1 = new EmployeeModel();
+            obj1.EmpId = 2;
+            obj1.EmpName = "Namrata";
+            obj1.EmpSalary = 4310000;
+
+            EmployeeModel obj2 = new EmployeeModel();
+            obj2.EmpId = 3;
+            obj2.EmpName = "vamshi";
+            obj2.EmpSalary = 4310000;
+
+            listemployee.Add(obj);
+            listemployee.Add(obj1);
+            listemployee.Add(obj2);
+
+            return View(listemployee);
+        }
+
+        public RedirectResult GetmeToGoogle()
+        {
+            return Redirect("https://www.google.co.in/webhp?source=search_app");
+        }
+
+        public RedirectResult GetmeToLocalUrl()
+        {
+            return Redirect("~/Default/Index?id=1");
         }
     }
 }
+
+

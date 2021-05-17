@@ -162,6 +162,7 @@
     <Content Include="Views\New\MyfavoriteDay3.cshtml" />
     <Content Include="Views\New\MyfavoriteDay4.cshtml" />
     <Content Include="Views\New\MyfavoriteDay5.cshtml" />
+    <Content Include="Views\New\MyfavoriteDay6.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
