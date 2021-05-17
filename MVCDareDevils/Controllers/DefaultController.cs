@@ -8,7 +8,7 @@ namespace MVCDareDevils.Controllers
 {
     public class DefaultController : Controller
     {
-        // GET: Default
+        // GET: Default added for srinivas
         public ActionResult Index(int? id)
         {
             return View();
