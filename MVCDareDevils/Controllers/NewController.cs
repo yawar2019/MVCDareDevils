@@ -154,6 +154,55 @@ namespace MVCDareDevils.Controllers
         {
             return Redirect("~/Default/Index?id=1");
         }
+
+        public ActionResult PartialViewExample()
+        {
+            List<EmployeeModel> listemployee = new List<EmployeeModel>();
+
+            EmployeeModel obj = new EmployeeModel();
+            obj.EmpId = 1;
+            obj.EmpName = "Lakshmi";
+            obj.EmpSalary = 2310000;
+
+            EmployeeModel obj1 = new EmployeeModel();
+            obj1.EmpId = 2;
+            obj1.EmpName = "Namrata";
+            obj1.EmpSalary = 4310000;
+
+            EmployeeModel obj2 = new EmployeeModel();
+            obj2.EmpId = 3;
+            obj2.EmpName = "vamshi";
+            obj2.EmpSalary = 4310000;
+
+            listemployee.Add(obj);
+            listemployee.Add(obj1);
+            listemployee.Add(obj2);
+            return View(listemployee);
+        }
+        public PartialViewResult PartialViewExample2()
+        {
+            List<EmployeeModel> listemployee = new List<EmployeeModel>();
+
+            EmployeeModel obj = new EmployeeModel();
+            obj.EmpId = 1;
+            obj.EmpName = "Lakshmi";
+            obj.EmpSalary = 2310000;
+
+            EmployeeModel obj1 = new EmployeeModel();
+            obj1.EmpId = 2;
+            obj1.EmpName = "Namrata";
+            obj1.EmpSalary = 4310000;
+
+            EmployeeModel obj2 = new EmployeeModel();
+            obj2.EmpId = 3;
+            obj2.EmpName = "vamshi";
+            obj2.EmpSalary = 4310000;
+
+            listemployee.Add(obj);
+            listemployee.Add(obj1);
+            listemployee.Add(obj2);
+            return PartialView("_MyPartialView",listemployee);
+        }
     }
 }
 

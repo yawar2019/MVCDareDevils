@@ -1,0 +1,21 @@
+﻿@model List<MVCDareDevils.Models.EmployeeModel>
+@{
+    ViewBag.Title = "PartialViewExample";
+}
+
+<h2>PartialViewExample</h2>
+ 
+    @{
+        var s=Html.Partial("_MyPartialView", Model);
+        int a = 10;
+        if (a == 10)
+        {
+            @s
+        }
+            }
+
+
+@{
+    Html.RenderPartial("_MyPartialView", Model);
+    }
+ 
