@@ -14,9 +14,9 @@ namespace MVCDareDevils.Controllers
             return "Thunder";
         }
 
-        public string helloWorld2(int? id,string name)
+        public string helloWorld2(int? id, string name)
         {
-            return "My Employee Id is: "+id+" Name: "+name;
+            return "My Employee Id is: " + id + " Name: " + name;
         }
 
         [Route("animal/lion")]
@@ -24,7 +24,7 @@ namespace MVCDareDevils.Controllers
         [Route("animal/cheetah")]
         public string helloWorld3()
         {
-            string s= helloWorld23();
+            string s = helloWorld23();
             return s;
         }
 
@@ -54,7 +54,8 @@ namespace MVCDareDevils.Controllers
             return "hi frnds";
         }
 
-        public int GetEmpId(int empid) {
+        public int GetEmpId(int empid)
+        {
 
             return empid;
         }
@@ -95,7 +96,7 @@ namespace MVCDareDevils.Controllers
             EmployeeModel obj1 = new EmployeeModel();
             obj1.EmpId = 2;
             obj1.EmpName = "Namrata";
-            obj1.EmpSalary =4310000;
+            obj1.EmpSalary = 4310000;
 
             EmployeeModel obj2 = new EmployeeModel();
             obj2.EmpId = 3;
@@ -107,7 +108,7 @@ namespace MVCDareDevils.Controllers
             listemployee.Add(obj2);
 
             ViewBag.info = listemployee;
-           
+
             return View();
         }
 
@@ -201,9 +202,88 @@ namespace MVCDareDevils.Controllers
             listemployee.Add(obj);
             listemployee.Add(obj1);
             listemployee.Add(obj2);
-            return PartialView("_MyPartialView",listemployee);
+            return PartialView("_MyPartialView", listemployee);
+        }
+
+        public JsonResult GetMeData()
+        {
+
+            List<EmployeeModel> listemployee = new List<EmployeeModel>();
+
+            EmployeeModel obj = new EmployeeModel();
+            obj.EmpId = 1;
+            obj.EmpName = "Lakshmi";
+            obj.EmpSalary = 2310000;
+
+            EmployeeModel obj1 = new EmployeeModel();
+            obj1.EmpId = 2;
+            obj1.EmpName = "Namrata";
+            obj1.EmpSalary = 4310000;
+
+            EmployeeModel obj2 = new EmployeeModel();
+            obj2.EmpId = 3;
+            obj2.EmpName = "vamshi";
+            obj2.EmpSalary = 4310000;
+
+            listemployee.Add(obj);
+            listemployee.Add(obj1);
+            listemployee.Add(obj2);
+
+            return Json(listemployee, JsonRequestBehavior.AllowGet);
+        }
+
+        public FileResult getmeFile()
+        {
+
+            return File("~/Web.config", "text/plain");
+        }
+
+        public FileResult getmeFile2()
+        {
+
+            return File("~/Web.config", "application/xml");
+        }
+        public FileResult getmeFile3()
+        {
+
+            return File("~/ActionResult.pdf", "application/pdf");
+        }
+        public FileResult getmeFile4()
+        {
+
+            return File("~/ActionResult.pdf", "application/pdf", "testDownLoad");
+        }
+
+        public ContentResult getmeDifferentContent(int? id)
+        {
+            if (id == 1)
+            {
+                return Content("hello World");
+            }
+            else if (id == 2)
+            {
+                return Content("<p style=color:red>hello World</p>");
+            }
+            else
+            {
+                return Content("<script>alert('hello  world')</script>");
+            }
+        }
+
+        public RedirectToRouteResult RedirectMyDen() {
+
+            return RedirectToRoute("Default1");
+        }
+        public RedirectToRouteResult RedirectMyDen2()
+        {
+            return RedirectToAction("MyfavoriteDay4");
+        }
+        public RedirectToRouteResult RedirectMyDen3()
+        {
+            return RedirectToAction("index","Default",new {id=1});
         }
     }
+
 }
 
 
