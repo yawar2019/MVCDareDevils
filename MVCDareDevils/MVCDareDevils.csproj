@@ -166,6 +166,7 @@
     <Content Include="Views\New\MyfavoriteDay6.cshtml" />
     <Content Include="Views\New\PartialViewExample.cshtml" />
     <Content Include="Views\Shared\_MyPartialView.cshtml" />
+    <Content Include="Views\Default\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

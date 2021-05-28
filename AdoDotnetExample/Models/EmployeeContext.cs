@@ -30,5 +30,18 @@ namespace AdoDotnetExample.Models
             }
             return listObj;
         }
+
+        public int SaveEmployee(EmployeeModel emp)
+        {
+            SqlCommand cmd = new SqlCommand("sp_RajaAddEmployee", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+            cmd.Parameters.AddWithValue("@EmpName",emp.EmpName);
+            cmd.Parameters.AddWithValue("@EmpSalary",emp.EmpSalary);
+           
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+            return i;
+        }
     }
 }
