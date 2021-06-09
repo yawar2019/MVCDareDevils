@@ -282,6 +282,11 @@ namespace MVCDareDevils.Controllers
         {
             return RedirectToAction("index","Default",new {id=1});
         }
+
+        public ActionResult MyView()
+        {
+            return View();
+        }
     }
 
 }
