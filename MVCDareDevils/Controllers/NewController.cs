@@ -290,6 +290,10 @@ namespace MVCDareDevils.Controllers
 
         public ActionResult HtmlHelperExample()
         {
+            EmployeeEntities db = new EmployeeEntities();
+            ViewBag.Country = new SelectList(db.employeeDetails,"EmpId","EmpName",45032);
+
+
             EmployeeModel obj = new EmployeeModel();
             obj.EmpId = 1;
             obj.EmpName = "Lakshmi";

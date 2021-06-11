@@ -5,10 +5,9 @@
 }
 
 <script>
-    function fun()
-    {
-        alert('My First name is '+document.getElementById("FirstName").value);
-        
+    function fun() {
+        alert('My First name is ' + document.getElementById("FirstName").value);
+
     }
 </script>
 
@@ -17,6 +16,29 @@
 
 <input type="text" id="FirstName" name="FirstName" value="Lakshmi" style="background-color:pink;" class="form-control" onclick="fun()" /><br />
 
-@Html.TextBox("asfasd","sreenivas",new { style = "background-color:Red;",@class="form-control", onclick = "fun()" })
+@Html.TextBox("asfasd", "sreenivas", new { style = "background-color:Red;", @class = "form-control", onclick = "fun()" })
 
-@Html.TextBoxFor(k=>k.EmpName)
+@Html.TextBoxFor(k => k.EmpName)<br />
+
+<br /><br />
+@Html.EditorForModel(Model)
+
+
+@*@Html.EditorFor(K => K.EmpName)
+    @Html.EditorFor(K => K.EmpSalary)
+    @Html.EditorFor(K => K.status)
+
+
+
+
+    @Html.LabelFor(k=>k.EmpName)<br />*@
+
+@Html.DropDownList("Country1", new List<SelectListItem>() {
+new SelectListItem {Text="Lakhsmi",Value="1" },
+new SelectListItem {Text="namrata",Value="2" },
+new SelectListItem {Text="sreenivas",Value="3" },
+new SelectListItem {Text="Arpan",Value="4" }
+},"Select Country")<br />
+
+@Html.DropDownList("Country")
+ 
