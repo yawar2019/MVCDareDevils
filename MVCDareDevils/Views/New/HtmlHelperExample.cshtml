@@ -1,0 +1,22 @@
+﻿@model MVCDareDevils.Models.EmployeeModel
+@{
+    ViewBag.Title = "HtmlHelperExample";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    function fun()
+    {
+        alert('My First name is '+document.getElementById("FirstName").value);
+        
+    }
+</script>
+
+<h2>HtmlHelperExample</h2>
+
+
+<input type="text" id="FirstName" name="FirstName" value="Lakshmi" style="background-color:pink;" class="form-control" onclick="fun()" /><br />
+
+@Html.TextBox("asfasd","sreenivas",new { style = "background-color:Red;",@class="form-control", onclick = "fun()" })
+
+@Html.TextBoxFor(k=>k.EmpName)

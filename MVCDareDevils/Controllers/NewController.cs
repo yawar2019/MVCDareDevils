@@ -287,6 +287,16 @@ namespace MVCDareDevils.Controllers
         {
             return View();
         }
+
+        public ActionResult HtmlHelperExample()
+        {
+            EmployeeModel obj = new EmployeeModel();
+            obj.EmpId = 1;
+            obj.EmpName = "Lakshmi";
+            obj.EmpSalary = 2310000;
+
+            return View(obj);
+        }
     }
 
 }
