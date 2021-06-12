@@ -220,6 +220,8 @@
     <Content Include="Views\Shared\_MyLayout.cshtml" />
     <Content Include="Views\New\MyView.cshtml" />
     <Content Include="Views\New\HtmlHelperExample.cshtml" />
+    <Content Include="Views\New\GetData2.cshtml" />
+    <Content Include="Views\New\GetData.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

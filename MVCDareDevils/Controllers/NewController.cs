@@ -301,6 +301,31 @@ namespace MVCDareDevils.Controllers
 
             return View(obj);
         }
+
+        public ActionResult GetData()
+        {
+            ViewBag.Player = "Virat";
+            ViewData["Player1"] = "Rohit";
+            TempData["Player2"] = "Pappu";
+            TempData["Player3"] = "Didi";
+
+            return RedirectToAction("GetData2");
+        }
+
+        public ActionResult GetData2()
+        {
+            ViewBag.t1 = ViewBag.Player;
+            ViewBag.t2 = ViewData["Player1"];
+            ViewBag.t3 = TempData["Player2"];
+            //ViewBag.t4 = TempData["Player3"];
+            //TempData.Keep();
+            ViewBag.t4 = TempData.Peek("Player3").ToString();//value read and Mark Player3 to retain values
+
+
+            
+
+            return View();
+        }
     }
 
 }
