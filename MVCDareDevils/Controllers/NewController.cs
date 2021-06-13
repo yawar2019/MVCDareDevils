@@ -1,4 +1,5 @@
-﻿using MVCDareDevils.Models;
+﻿using MVCDareDevils.Filter;
+using MVCDareDevils.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,9 @@ namespace MVCDareDevils.Controllers
         {
             return "Thunder";
         }
+
+
+         
 
         public string helloWorld2(int? id, string name)
         {
@@ -280,7 +284,7 @@ namespace MVCDareDevils.Controllers
         }
         public RedirectToRouteResult RedirectMyDen3()
         {
-            return RedirectToAction("index","Default",new {id=1});
+            return RedirectToAction("index", "Default", new { id = 1 });
         }
 
         public ActionResult MyView()
@@ -288,10 +292,12 @@ namespace MVCDareDevils.Controllers
             return View();
         }
 
+
         public ActionResult HtmlHelperExample()
         {
+      
             EmployeeEntities db = new EmployeeEntities();
-            ViewBag.Country = new SelectList(db.employeeDetails,"EmpId","EmpName",45032);
+            ViewBag.Country = new SelectList(db.employeeDetails, "EmpId", "EmpName", 45032);
 
 
             EmployeeModel obj = new EmployeeModel();
@@ -321,11 +327,17 @@ namespace MVCDareDevils.Controllers
             //TempData.Keep();
             ViewBag.t4 = TempData.Peek("Player3").ToString();//value read and Mark Player3 to retain values
 
-
-            
-
             return View();
         }
+        [CustomeFilter]
+        public ActionResult GetData3()
+        {
+            ViewBag.Hero = "Narendra Bahubali Modi";
+
+            return View();
+
+        }
+
     }
 
 }
