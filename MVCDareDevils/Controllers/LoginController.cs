@@ -31,8 +31,19 @@ namespace MVCDareDevils.Controllers
             }
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin,Manager")]
         public ActionResult DashBoard()
+        {
+            return View();
+        }
+
+        [Authorize(Roles="Admin")]
+        public ActionResult Contact()
+        {
+            return View();
+        }
+        [Authorize(Roles="Manager")]
+        public ActionResult AboutUs()
         {
             return View();
         }

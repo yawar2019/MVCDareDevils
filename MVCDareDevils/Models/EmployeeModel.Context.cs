@@ -28,5 +28,6 @@ namespace MVCDareDevils.Models
         public virtual DbSet<employeeDetail> employeeDetails { get; set; }
         public virtual DbSet<UserDetail> UserDetails { get; set; }
         public virtual DbSet<UserRoleMapping> UserRoleMappings { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
     }
 }

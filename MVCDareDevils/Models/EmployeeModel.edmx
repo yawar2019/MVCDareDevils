@@ -17,6 +17,13 @@
           <Property Name="Address" Type="varchar" MaxLength="50" />
           <Property Name="dob" Type="datetime" />
         </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="UserDetail">
           <Key>
             <PropertyRef Name="UserId" />
@@ -35,6 +42,7 @@
         </EntityType>
         <EntityContainer Name="EmployeeModelStoreContainer">
           <EntitySet Name="employeeDetails" EntityType="Self.employeeDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserDetail" EntityType="Self.UserDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRoleMapping" EntityType="Self.UserRoleMapping" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -58,6 +66,7 @@
           <EntitySet Name="employeeDetails" EntityType="Self.employeeDetail" />
           <EntitySet Name="UserDetails" EntityType="EmployeeModel.UserDetail" />
           <EntitySet Name="UserRoleMappings" EntityType="EmployeeModel.UserRoleMapping" />
+          <EntitySet Name="Roles" EntityType="EmployeeModel.Role" />
         </EntityContainer>
         <EntityType Name="UserDetail">
           <Key>
@@ -74,6 +83,13 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EmpId" Type="Int32" />
           <Property Name="RoleId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -108,6 +124,14 @@
               <MappingFragment StoreEntitySet="UserRoleMapping">
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
                 <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="EmployeeModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
