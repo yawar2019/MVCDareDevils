@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MVCDareDevils.ServiceReference1;
+using MVCDareDevils.ServiceReference2;
 namespace MVCDareDevils.Controllers
 {
     public class WebServiceController : Controller
@@ -20,7 +21,16 @@ namespace MVCDareDevils.Controllers
         {
             LakshmiWorldTourServiceSoapClient obj = new LakshmiWorldTourServiceSoapClient();
             List<EmployeeModel> result = obj.getEmployees().ToList();
+
+           
             return View(result);
+        }
+
+        public ActionResult getEmployees2()
+        {
+            Service1Client obj1 = new Service1Client();
+            obj1.Add(10, 25);
+            return Content(obj1.Add(10, 25).ToString());
         }
     }
 }

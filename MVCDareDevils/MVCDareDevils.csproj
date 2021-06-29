@@ -180,6 +180,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\ServiceReference2\Service1.disco" />
+    <None Include="Service References\ServiceReference2\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference2\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="tempdata.txt" />
     <Content Include="viewBAg.txt" />
     <Content Include="Web.config" />
@@ -229,6 +236,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ServiceReference2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -266,6 +278,13 @@
     <Content Include="Views\Login\AboutUs.cshtml" />
     <None Include="Service References\ServiceReference1\LakshmiWorldTourService.wsdl" />
     <Content Include="Views\WebService\getEmployees.cshtml" />
+    <None Include="Service References\ServiceReference2\Service1.wsdl" />
+    <None Include="Service References\ServiceReference2\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference2\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -284,6 +303,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+    <WCFMetadataStorage Include="Service References\ServiceReference2\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

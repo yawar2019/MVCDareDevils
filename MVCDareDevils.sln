@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCDareDevils", "MVCDareDevils\MVCDareDevils.csproj", "{815A11BD-E856-4FEA-BA7C-90EBFAD1632A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{A315C01A-4F46-459F-8F28-74A07CEC44AC} = {A315C01A-4F46-459F-8F28-74A07CEC44AC}
+		{7BF98BFF-7537-4FB3-811E-7B77196D367B} = {7BF98BFF-7537-4FB3-811E-7B77196D367B}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoDotnetExample", "AdoDotnetExample\AdoDotnetExample.csproj", "{8245E244-ACC1-4AE6-885D-55821BF0DFCC}"
@@ -17,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelBasedApproach", "ModelBasedApproach\ModelBasedApproach.csproj", "{DED12037-24BF-4896-A4B2-06470AC7A215}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "WebService\WebService.csproj", "{A315C01A-4F46-459F-8F28-74A07CEC44AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceApp", "WcfServiceApp\WcfServiceApp.csproj", "{7BF98BFF-7537-4FB3-811E-7B77196D367B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +51,10 @@ Global
 		{A315C01A-4F46-459F-8F28-74A07CEC44AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A315C01A-4F46-459F-8F28-74A07CEC44AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A315C01A-4F46-459F-8F28-74A07CEC44AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BF98BFF-7537-4FB3-811E-7B77196D367B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BF98BFF-7537-4FB3-811E-7B77196D367B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BF98BFF-7537-4FB3-811E-7B77196D367B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BF98BFF-7537-4FB3-811E-7B77196D367B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
